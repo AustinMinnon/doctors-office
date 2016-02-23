@@ -5,6 +5,7 @@ public class Patient {
   private int id;
   private String name;
   private int doctor_id;
+  private String birth_date;
 
   public Patient(String name) {
     this.name = name;
