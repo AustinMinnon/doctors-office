@@ -4,6 +4,7 @@ import org.sql2o.*;
 public class Patient {
   private int id;
   private String name;
+  private int doctor_id;
 
   public Patient(String name) {
     this.name = name;
