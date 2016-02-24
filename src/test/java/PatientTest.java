@@ -40,4 +40,13 @@ public class PatientTest {
     Patient savedPatient = Patient.find(myPatient.getId());
     assertTrue(myPatient.equals(savedPatient));
   }
+
+  @Test
+  public void setAndGetDoctorId_assignsADoctortoAPatientandReturnsIt_doctorId() {
+    Patient myPatient = new Patient ("John Patient with a doctor");
+    myPatient.setDoctor(1);
+    myPatient.save();
+    Patient savedPatient = Patient.find(myPatient.getId());
+    assertTrue(myPatient.getDoctor().equals(savedPatient.getDoctor()));
+  }
 }

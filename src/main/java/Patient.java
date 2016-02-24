@@ -55,4 +55,15 @@ public class Patient {
         .executeAndFetchFirst(Patient.class);
     }
   }
+
+  public void setDoctor(int doctorId) {
+    this.doctor_id = doctorId;
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE patients SET doctor_id = :doctor_id WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("id", id)
+        .addParameter("doctor_id", this.doctor_id)
+        .executeUpdate();
+    }
+  }
 }
